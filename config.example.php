@@ -2,7 +2,7 @@
 // Copy this file to config.php and change the values for your PHP host.
 // Never commit config.php to a public GitHub repository.
 define('DB_HOST', '127.0.0.1');
-define('DB_NAME', 'levehel_portfolio');
+define('DB_NAME', 'tihut_portfolio');
 define('DB_USER', 'root');
 define('DB_PASS', '');
 
