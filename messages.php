@@ -12,20 +12,20 @@ session_start();
 $inboxPassword = INBOX_PASSWORD;
 $loginError = '';
 if (isset($_GET['logout'])) {
-    unset($_SESSION['levehel_inbox']);
+    unset($_SESSION['Tihut_inbox']);
     header('Location: messages.php');
     exit;
 }
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['inbox_password'])) {
     if ($inboxPassword !== '' && hash_equals($inboxPassword, (string) $_POST['inbox_password'])) {
         session_regenerate_id(true);
-        $_SESSION['levehel_inbox'] = true;
+        $_SESSION['tihut_inbox'] = true;
         header('Location: messages.php');
         exit;
     }
     $loginError = 'That password did not match. Please try again.';
 }
-$authenticated = !empty($_SESSION['levehel_inbox']);
+$authenticated = !empty($_SESSION['tihut_inbox']);
 
 $pdo = null;
 $dbError = '';
@@ -70,7 +70,7 @@ $currentYear = date('Y');
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Messages | Levehel’s Portfolio</title>
-<meta name="description" content="Private message inbox for Levehel’s portfolio website.">
+<meta name="description" content="Private message inbox for Tihut’s portfolio website.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230f2a22'/%3E%3Ctext x='32' y='45' font-family='Arial' font-size='36' font-weight='700' fill='%23ffffff' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -83,7 +83,7 @@ $currentYear = date('Y');
 
 <nav class="navbar site-nav">
   <div class="container">
-    <a class="navbar-brand" href="index.php" aria-label="Back to Levehel's portfolio">
+    <a class="navbar-brand" href="index.php" aria-label="Back to Tihut's portfolio">
       <span class="brand-mark">L</span>
       <span class="brand-text">Levehel<small>Private messages</small></span>
     </a>
@@ -99,7 +99,7 @@ $currentYear = date('Y');
  <?php if (!$authenticated): ?>
     <section class="form-card inbox-login">
       <p class="section-label mb-2">Private area</p>
-      <h1 class="inbox-title">Levehel’s message inbox</h1>
+      <h1 class="inbox-title">Tihut’s message inbox</h1>
       <p class="inbox-intro">This page is private. Enter your inbox password to continue.</p>
  <?php if ($loginError !== ''): ?>
       <div class="alert alert-danger" role="alert"><?= escape($loginError) ?></div>
@@ -180,7 +180,7 @@ $currentYear = date('Y');
 
 <footer class="inbox-footer">
   <div class="container d-flex flex-wrap justify-content-between gap-2">
-    <span>&copy; <?= $currentYear ?> Levehel. Personal portfolio.</span>
+    <span>&copy; <?= $currentYear ?> Tihut. Personal portfolio.</span>
     <a href="index.php">Back to portfolio <i class="bi bi-arrow-right"></i></a>
   </div>
 </footer>
