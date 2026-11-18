@@ -1,10 +1,10 @@
-# Levehel — Personal Portfolio
+# Tihut — Personal Portfolio
 
 This package keeps the original portfolio's main sections and PHP/MySQL message-form idea, updated with:
-- Name: **Levehel**
+- Name: **Tihut**
 - Soft water-blue and pink theme
-- Email: **levyyf@gmail.com**
-- GitHub: **https://github.com/levyyf-droid**
+- Email: **lesliesintayehu@gmail.com**
+- GitHub: **https://github.com/lesliesintayehu-png**
 - A password-protected `messages.php` inbox
 
 ## Files
